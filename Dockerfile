@@ -2,9 +2,9 @@
 FROM node:alpine3.20 as build
 WORKDIR /app
 COPY package.json .
-RUN pnpm install
+RUN npm install
 COPY . .
-RUN pnpm run build
+RUN npm run build
 
 # Step 2: Server With Nginx
 FROM nginx:1.27-alpine
